@@ -3,38 +3,126 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MANNAV R. JAISINGHANI</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=Cutive+Mono&display=swap" rel="stylesheet">
+  <title>MANNAV R JAISINGHANI</title>
+
+  <!-- Google Fonts:
+       Poppins (italic heavy) for the heading,
+       Roboto Mono (bold) for manifesto -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+
   <style>
-    html,body{height:100%;}
+    :root{
+      --paper:#f5f1e6;        /* subtle off-white / beige */
+      --title-red:#b3162a;   /* maroon-ish but still bright */
+      --text-black:#121212;
+      --maxw:820px;
+    }
+
+    html,body { height:100%; }
     body{
-      margin:0;display:flex;align-items:center;justify-content:center;
-      background:#fff;color:#000;font-family:"Cutive Mono",monospace;
+      margin:0;
+      background:var(--paper);
+      color:var(--text-black);
+      font-family: "Roboto Mono", "Courier New", monospace;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      box-sizing:border-box;
     }
-    .wrap{max-width:900px;padding:36px;box-sizing:border-box;text-align:center;}
-    h1{
-      margin:0 0 22px;font-family:"Poppins","Futura","Trebuchet MS",sans-serif;
-      font-weight:900;color:#c8102e;text-transform:uppercase;letter-spacing:0.06em;
-      font-size:clamp(36px,8vw,96px);line-height:1;
+
+    /* Outer container holds three vertical sections spaced equally */
+    .page {
+      width:100%;
+      max-width:var(--maxw);
+      height:calc(100vh - 48px); /* account for padding */
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between; /* equal spacing top -> middle -> bottom */
+      align-items:center;
+      box-sizing:border-box;
     }
-    ol.manifesto{
-      margin:0;padding-left:1.25rem;display:inline-block;text-align:left;
-      font-size:clamp(14px,2.1vw,20px);line-height:1.5;max-width:720px;
+
+    /* Title (single line) */
+    .title {
+      font-family: "Poppins", "Futura", "Trebuchet MS", sans-serif;
+      font-style: italic;
+      font-weight:900;
+      color:var(--title-red);
+      letter-spacing:0.06em;
+      line-height:1;
+      margin:0;
+      white-space:nowrap;            /* keep single line */
+      transform-origin:center;
+      /* Responsive size that shrinks to fit small screens but stays one line */
+      font-size: clamp(28px, 6.6vw, 64px);
     }
-    ol.manifesto li{margin:0.6rem 0;font-weight:500;}
-    @media(max-width:420px){.wrap{padding:18px;}ol.manifesto{padding-left:1rem;}}
+
+    /* manifesto wrapper — left aligned within the centered container */
+    .manifesto-wrap {
+      width:100%;
+      max-width:720px;
+      align-self:center;
+      display:block;
+    }
+
+    ol.manifesto {
+      margin:0;
+      padding-left:1.25rem; /* indent numbers slightly */
+      text-align:left;
+      font-family: "Roboto Mono", monospace;
+      font-weight:700;            /* thicker typewriter feel */
+      color:var(--text-black);
+      font-size: clamp(15px, 2.1vw, 20px);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    ol.manifesto li {
+      margin:0.8rem 0;
+    }
+
+    /* postscript centered at bottom, italic Arial fallback */
+    .post {
+      font-family: Arial, Helvetica, sans-serif;
+      font-style:italic;
+      color:var(--text-black);
+      font-size: clamp(13px, 1.8vw, 16px);
+      margin:0;
+      text-align:center;
+      opacity:0.96;
+    }
+
+    /* Small screens adjustments */
+    @media (max-width:420px){
+      .page { height:auto; padding-top:18px; padding-bottom:18px; justify-content:flex-start; gap:18px; }
+      .title { font-size: clamp(22px, 9vw, 46px); white-space:normal; } /* on very tiny screens title may wrap once */
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>MANNAV R. JAISINGHANI</h1>
-    <ol class="manifesto">
-      <li>I Am At War With Inauthenticity</li>
-      <li>Hesitance is our Generation’s Biggest Plague</li>
-      <li>If You Parent Got a Wikipedia Page I’m Not Tryna See Yo Art</li>
-      <li>Originality Lies in the Attempt of Originality - It’s original in the virtue that it tries to be</li>
-      <li>Too Cringe to Live, to Based to Die</li>
-    </ol>
+  <div class="page" role="main" aria-label="Mannav R Jaisinghani manifesto page">
+    <!-- top: title -->
+    <h1 class="title">MANNAV R JAISINGHANI</h1>
+
+    <!-- middle: manifesto (left aligned within centered container) -->
+    <div class="manifesto-wrap" aria-label="manifesto">
+      <ol class="manifesto">
+        <li>I Am At War With Inauthenticity</li>
+        <li>Hesitance is our Generation’s Biggest Plague</li>
+        <li>If Yo Parent Got a Wikipedia Page I’m Not Tryna See Yo Art</li>
+        <li>Originality Lies in the Attempt of Originality - It’s Original in the Virtue That it Tries To Be</li>
+        <li>Too Cringe to Live, too Based to Die</li>
+      </ol>
+    </div>
+
+    <!-- bottom: postscript -->
+    <div style="width:100%; max-width:var(--maxw); display:flex; justify-content:center;">
+      <p class="post">@mannavmedia</p>
+    </div>
   </div>
 </body>
 </html>
