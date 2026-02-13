@@ -1,131 +1,122 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MANNAV R JAI$INGHANI</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>MANNAV R. JAI$INGHANI</title>
 
-  <style>
-    :root{
-      --paper:#f5f1e6;
-      --bright-red:#ff0000;      /* brightest red */
-      --deep-black:#000000;      /* deepest black */
-      --maxw:820px;
-    }
+<style>
+:root{
+  --paper:#f5f1e6;
+  --bright-red:#ff0000;
+  --deep-black:#000000;
+  --maxw:820px;
+}
 
-    html,body { height:100%; }
+html,body { height:100%; }
 
-    body{
-      margin:0;
-      background:var(--paper);
-      color:var(--deep-black);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-      box-sizing:border-box;
-    }
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--deep-black);
+  display:flex;
+  justify-content:center;
+  padding:24px;
+  box-sizing:border-box;
+}
 
-    .page {
-      width:100%;
-      max-width:var(--maxw);
-      height:calc(100vh - 48px);
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      align-items:center;
-      box-sizing:border-box;
-    }
+.page{
+  width:100%;
+  max-width:var(--maxw);
+}
 
-    /* HEADER */
-    .title {
-      font-family: Futura, "Trebuchet MS", sans-serif;
-      font-style: italic;
-      font-weight: 900;
-      color: var(--bright-red);
-      letter-spacing:0.05em;
-      margin:0;
-      text-align:center;
-      font-size: clamp(32px, 7vw, 72px);
-    }
+/* HEADER */
+.title{
+  font-family:Futura, "Trebuchet MS", sans-serif;
+  font-style:italic;
+  font-weight:1000; /* heavier */
+  color:var(--bright-red);
+  letter-spacing:0.05em;
+  margin:0;
+  font-size:clamp(32px, 7vw, 72px);
+}
 
-    /* SUBTITLE */
-    .subtitle {
-      font-family: Futura, "Trebuchet MS", sans-serif;
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(12px, 1.5vw, 14px);
-      margin-top:12px;
-      margin-bottom:28px;
-      text-align:center;
-    }
+/* SUBTITLE FIXED */
+.subtitle{
+  font-family:Futura, "Trebuchet MS", sans-serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(12px, 1.6vw, 14px);
+  margin:18px 0 40px 0;
+  line-height:1.7;
+  max-width:100%;
+  word-break:break-word;
+}
 
-    /* BODY / MANIFESTO */
-    .manifesto-wrap {
-      width:100%;
-      max-width:720px;
-      align-self:center;
-      display:block;
-    }
+/* MANIFESTO (unchanged structurally) */
+.manifesto-wrap{
+  width:100%;
+  max-width:720px;
+}
 
-    ol.manifesto {
-      margin:0;
-      padding-left:1.25rem;
-      text-align:left;
-      font-family: "Courier New", Courier, monospace;
-      font-weight:300;
-      color:var(--deep-black);
-      font-size: clamp(16px, 2.3vw, 22px);
-      line-height:1.6;
-    }
+ol.manifesto{
+  margin:0;
+  padding-left:1.25rem;
+  text-align:left;
+  font-family:"Courier New", Courier, monospace;
+  font-weight:300;
+  color:var(--deep-black);
+  font-size:clamp(16px, 2.3vw, 22px);
+  line-height:1.6;
+}
 
-    ol.manifesto li {
-      margin:0.8rem 0;
-    }
+ol.manifesto li{
+  margin:0.8rem 0;
+}
 
-    /* POSTSCRIPT */
-    .post {
-      font-family: Futura, "Trebuchet MS", sans-serif;
-      font-style: normal;
-      font-weight:400;
-      font-size: clamp(12px, 1.5vw, 14px);
-      margin:0;
-      text-align:center;
-    }
+/* POSTSCRIPT */
+.post{
+  font-family:Futura, "Trebuchet MS", sans-serif;
+  font-style:normal;
+  font-weight:400;
+  font-size:clamp(12px, 1.6vw, 14px);
+  margin-top:50px;
+}
 
-    @media (max-width:420px){
-      .page { height:auto; padding-top:18px; padding-bottom:18px; justify-content:flex-start; gap:18px; }
-    }
-  </style>
+.post a{
+  color:var(--deep-black);
+  text-decoration:none;
+}
+
+.post a:hover{
+  text-decoration:underline;
+}
+</style>
 </head>
 
 <body>
-  <div class="page">
+<div class="page">
 
-    <!-- HEADER -->
-    <div>
-      <h1 class="title">MANNAV R. JAI$INGHANI</h1>
-      <div class="subtitle">
-        writing/editing/rapping/recording/philosophising/shooting/thinking/inventing/living/loving/laughing/curating/smiling/snacking/learning/provoking
-      </div>
-    </div>
+<h1 class="title">MANNAV R. JAI$INGHANI</h1>
 
-    <!-- MANIFESTO -->
-    <div class="manifesto-wrap">
-      <ol class="manifesto">
-        <li>I Am At War With Inauthenticity</li>
-        <li>Hesitance is our Generation’s Biggest Plague</li>
-        <li>If Your Parent Has a Wikipedia Page I’m Not Trying to See Your Art</li>
-        <li>Originality Lies in the Attempt of Originality - It’s Original in the Virtue That it Tries To Be</li>
-        <li>Too Cringe to Live, too Based to Die</li>
-      </ol>
-    </div>
+<div class="subtitle">
+writing/editing/rapping/recording/philosophising/shooting/thinking/inventing/living/loving/laughing/curating/smiling/snacking/learning/provoking
+</div>
 
-    <!-- POSTSCRIPT -->
-    <div>
-      <p class="post">find me, @mannavmedia</p>
-    </div>
+<div class="manifesto-wrap">
+  <ol class="manifesto">
+    <li>I Am At War With Inauthenticity</li>
+    <li>Hesitance is our Generation’s Biggest Plague</li>
+    <li>If Yo Parent Got a Wikipedia Page I’m Not Tryna See Yo Art</li>
+    <li>Originality Lies in the Attempt of Originality - It’s Original in the Virtue That it Tries To Be</li>
+    <li>Too Cringe to Live, too Based to Die</li>
+  </ol>
+</div>
 
-  </div>
+<div class="post">
+  find me, <a href="https://instagram.com/mannavmedia" target="_blank">@mannavmedia</a>
+</div>
+
+</div>
 </body>
 </html>
