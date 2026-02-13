@@ -3,172 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MANNAV R. JAISINGHANI</title>
+<title>MANNAV R. JAI$INGHANI</title>
 
 <style>
-body{
-  margin:0;
-  padding:0;
-  background:#e6e1d8;
-  font-family: Helvetica, Arial, sans-serif;
-  color:#111;
-  text-align:center;
-  overflow-x:hidden;
+
+/* ===== Base ===== */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #e6e1d8; /* unchanged */
+  text-align: center;
 }
 
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:100px 20px 200px;
+/* ===== Layout ===== */
+
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 100px 20px 160px;
 }
 
-h1{
-  font-size:clamp(48px, 9vw, 110px);
-  font-weight:700;
-  color:#ff1a1a;
-  margin:0 0 40px;
-  letter-spacing:2px;
+/* ===== Header ===== */
+
+h1 {
+  font-family: "Futura", "Futura PT", sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  font-size: clamp(48px, 9vw, 110px);
+  color: #ff0000; /* brightest red */
+  margin: 0 0 50px;
+  letter-spacing: 2px;
 }
 
-.subtitle{
-  font-size:clamp(16px, 3.2vw, 22px);
-  line-height:1.6;
-  max-width:700px;
-  margin:0 auto 80px;
+/* ===== Subtitle ===== */
+
+.subtitle {
+  font-family: "Futura", "Futura PT", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(18px, 3.2vw, 24px);
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 90px;
 }
 
-.manifesto{
-  font-size:18px;
-  line-height:1.7;
-  max-width:700px;
-  margin:0 auto 100px;
-  text-align:left;
+/* ===== Manifesto ===== */
+
+.manifesto {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 300;
+  font-size: 20px;
+  color: #000000; /* deepest black */
+  line-height: 1.75;
+  max-width: 720px;
+  margin: 0 auto 110px;
+  text-align: left;
 }
 
-.manifesto li{
-  margin-bottom:14px;
+.manifesto li {
+  margin-bottom: 16px;
 }
 
-.footer{
-  margin-top:120px;
-  font-size:18px;
-}
+/* ===== Postscript ===== */
 
-.footer a{
-  text-decoration:none;
-  color:black;
-}
-
-.word{
-  display:inline-block;
-  will-change:transform;
-}
-</style>
-</head>
-<body>
-
-<div class="container breakable">
-
-<h1>MANNAV R. JAISINGHANI</h1>
-
-<div class="subtitle">
-writing / editing / rapping / recording / philosophising / shooting / thinking <br>
-inventing / living / loving / laughing / curating / smiling / snacking / learning <br>
-provoking
-</div>
-
-<ul class="manifesto">
-<li>I Am At War With Inauthenticity</li>
-<li>Hesitance is our Generation’s Biggest Plague</li>
-<li>If Your Parent Has a Wikipedia Page, I’m Not Trying To See Your Art</li>
-<li>Originality Lies in the Attempt of Originality</li>
-<li>To Cringe To Live, too Based to Die</li>
-<li>Distraction is a Navigation</li>
-<li>I am a thinker with Teeth and a writer with Nails</li>
-<li>To love is to love, to complicate is to hate</li>
-<li>I Know the Truth. And if I Don’t Know it now, I’ll know it when I need to.</li>
-<li>Too many people want you to live in their head because they’re stuck there</li>
-</ul>
-
-<div class="footer">
-find me,<br><br>
-<a href="https://instagram.com/mannavmedia" target="_blank">@mannavmedia</a><br>
-(<a href="https://www.behance.net/mannavjaising1" target="_blank">behance</a>)  
-(<a href="https://medium.com/@mannavj" target="_blank">medium</a>)
-</div>
-
-</div>
-
-<script>
-function wrapTextNodes(element){
-  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
-  const nodes = [];
-
-  while(walker.nextNode()){
-    nodes.push(walker.currentNode);
-  }
-
-  nodes.forEach(node=>{
-    if(node.parentNode.tagName !== "SCRIPT"){
-      const words = node.textContent.split(/(\s+)/);
-      const frag = document.createDocumentFragment();
-
-      words.forEach(word=>{
-        if(word.trim().length>0){
-          const span = document.createElement("span");
-          span.className="word";
-          span.textContent=word;
-          frag.appendChild(span);
-        }else{
-          frag.appendChild(document.createTextNode(word));
-        }
-      });
-
-      node.parentNode.replaceChild(frag,node);
-    }
-  });
-}
-
-wrapTextNodes(document.querySelector(".breakable"));
-
-const words=document.querySelectorAll(".word");
-let collapsed=false;
-
-function collapse(){
-  words.forEach((word,i)=>{
-    const delay=i*4;
-    const distance=window.innerHeight*0.85;
-    const tilt=(Math.random()-0.5)*6;
-
-    word.style.transition=`transform 1.8s cubic-bezier(.25,.8,.25,1) ${delay}ms`;
-    word.style.transform=`translateY(${distance}px) rotate(${tilt}deg)`;
-  });
-
-  collapsed=true;
-}
-
-function restore(){
-  words.forEach(word=>{
-    word.style.transition="transform 1.2s ease";
-    word.style.transform="translateY(0px) rotate(0deg)";
-  });
-
-  collapsed=false;
-}
-
-window.addEventListener("scroll",()=>{
-  const atBottom =
-    window.innerHeight + window.scrollY >= document.body.offsetHeight - 2;
-
-  if(atBottom && !collapsed){
-    collapse();
-  }
-
-  if(!atBottom && collapsed){
-    restore();
-  }
-});
-</script>
-
-</body>
-</html>
+.footer {
+  font-family: "Futura", "Futura PT", sans
