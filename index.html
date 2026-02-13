@@ -17,8 +17,9 @@ body{
   margin:0;
   background:var(--paper);
   color:var(--deep-black);
-  padding:40px 20px;
+  padding:60px 20px;
   box-sizing:border-box;
+  overflow-x:hidden;
 }
 
 .page{
@@ -35,24 +36,24 @@ body{
   color:var(--bright-red);
   letter-spacing:0.05em;
   margin:0;
-  font-size:clamp(32px, 7vw, 72px);
+  font-size:clamp(34px, 7vw, 76px);
   text-align:center;
 }
 
-/* SUBTITLE */
+/* SUBTITLE — FIXED */
 .subtitle{
   font-family:Futura, "Trebuchet MS", sans-serif;
   font-style:italic;
   font-weight:400;
-  font-size:clamp(12px, 1.6vw, 14px);
-  margin:18px 0 40px 0;
-  line-height:1.7;
+  font-size:clamp(15px, 2.2vw, 18px);
+  line-height:1.8;
   text-align:center;
+  max-width:650px;
+  margin:24px auto 50px auto;
 }
 
 /* MANIFESTO */
 .manifesto-wrap{
-  width:100%;
   max-width:720px;
   margin:0 auto;
 }
@@ -64,39 +65,23 @@ ol.manifesto{
   font-family:"Courier New", Courier, monospace;
   font-weight:300;
   color:var(--deep-black);
-  font-size:clamp(16px, 2.3vw, 22px);
-  line-height:1.8;
+  font-size:clamp(18px, 2.6vw, 24px);
+  line-height:1.9;
 }
 
 ol.manifesto li{
-  margin:1rem 0;
+  margin:1.2rem 0;
 }
 
-/* WORD QUake EFFECT */
-.manifesto span{
-  display:inline-block;
-}
-
-.manifesto span:hover{
-  animation: quake 0.25s ease-in-out infinite alternate;
-}
-
-@keyframes quake{
-  0%   { transform: translate(0px,0px) rotate(0deg); }
-  25%  { transform: translate(-1px,1px) rotate(-1deg); }
-  50%  { transform: translate(1px,-1px) rotate(1deg); }
-  75%  { transform: translate(-1px,-1px) rotate(-0.5deg); }
-  100% { transform: translate(1px,1px) rotate(0.5deg); }
-}
-
-/* POSTSCRIPT */
+/* POSTSCRIPT — aligned with subtitle */
 .post{
   font-family:Futura, "Trebuchet MS", sans-serif;
   font-style:normal;
   font-weight:400;
-  font-size:clamp(12px, 1.6vw, 14px);
-  margin-top:60px;
+  font-size:clamp(15px, 2.2vw, 18px);
   text-align:center;
+  max-width:650px;
+  margin:80px auto 0 auto;
 }
 
 .post a{
@@ -108,8 +93,10 @@ ol.manifesto li{
   text-decoration:underline;
 }
 
-.links{
-  margin-top:12px;
+/* Word styling for crumble effect */
+.word{
+  display:inline-block;
+  transition:transform 0.6s ease, opacity 0.6s ease;
 }
 </style>
 </head>
@@ -119,33 +106,74 @@ ol.manifesto li{
 
 <h1 class="title">MANNAV R. JAI$INGHANI</h1>
 
-<div class="subtitle">
-writing/editing/rapping/recording/philosophising/shooting/thinking/inventing/living/loving/laughing/curating/smiling/snacking/learning/provoking
+<div class="subtitle breakable">
+writing / editing / rapping / recording / philosophising / shooting / thinking / inventing / living / loving / laughing / curating / smiling / snacking / learning / provoking
 </div>
 
-<div class="manifesto-wrap">
+<div class="manifesto-wrap breakable">
   <ol class="manifesto">
-    <li><span>I</span> <span>Am</span> <span>At</span> <span>War</span> <span>With</span> <span>Inauthenticity</span></li>
-    <li><span>Hesitance</span> <span>is</span> <span>our</span> <span>Generation’s</span> <span>Biggest</span> <span>Plague</span></li>
-    <li><span>If</span> <span>Your</span> <span>Parent</span> <span>Has</span> <span>a</span> <span>Wikipedia</span> <span>Page,</span> <span>I’m</span> <span>Not</span> <span>Trying</span> <span>To</span> <span>See</span> <span>Your</span> <span>Art</span></li>
-    <li><span>Originality</span> <span>Lies</span> <span>in</span> <span>the</span> <span>Attempt</span> <span>of</span> <span>Originality</span> <span>-</span> <span>It’s</span> <span>Original</span> <span>in</span> <span>the</span> <span>Virtue</span> <span>That</span> <span>it</span> <span>Tries</span> <span>To</span> <span>Be</span></li>
-    <li><span>Too</span> <span>Cringe</span> <span>to</span> <span>Live,</span> <span>too</span> <span>Based</span> <span>to</span> <span>Die</span></li>
-    <li><span>Distraction</span> <span>is</span> <span>a</span> <span>Navigation</span></li>
-    <li><span>I</span> <span>am</span> <span>a</span> <span>thinker</span> <span>with</span> <span>Teeth</span> <span>and</span> <span>a</span> <span>writer</span> <span>with</span> <span>Nails</span></li>
-    <li><span>To</span> <span>love</span> <span>is</span> <span>to</span> <span>love,</span> <span>to</span> <span>complicate</span> <span>is</span> <span>to</span> <span>hate</span></li>
-    <li><span>I</span> <span>Know</span> <span>the</span> <span>Truth,</span> <span>And</span> <span>if</span> <span>I</span> <span>Don't</span> <span>Know</span> <span>it</span> <span>now,</span> <span>I'll</span> <span>know</span> <span>it</span> <span>when</span> <span>I</span> <span>need</span> <span>to.</span> <span>That's</span> <span>my</span> <span>truth,</span> <span>timing.</span></li>
-    <li><span>too</span> <span>many</span> <span>people</span> <span>want</span> <span>you</span> <span>to</span> <span>live</span> <span>in</span> <span>their</span> <span>head</span> <span>because</span> <span>they're</span> <span>stuck</span> <span>there</span></li>
+    <li>I Am At War With Inauthenticity</li>
+    <li>Hesitance is our Generation’s Biggest Plague</li>
+    <li>If Your Parent Has a Wikipedia Page, I’m Not Trying To See Your Art</li>
+    <li>Originality Lies in the Attempt of Originality - It’s Original in the Virtue That it Tries To Be</li>
+    <li>Too Cringe to Live, too Based to Die</li>
+    <li>Distraction is a Navigation</li>
+    <li>I am a thinker with Teeth and a writer with Nails</li>
+    <li>To love is to love, to complicate is to hate</li>
+    <li>I Know the Truth, And if I Don't Know it now, I'll know it when I need to. That's my truth, timing.</li>
+    <li>too many people want you to live in their head because they're stuck there</li>
   </ol>
 </div>
 
-<div class="post">
-  find me, <a href="https://instagram.com/mannavmedia" target="_blank">@mannavmedia</a>
-  <div class="links">
-    (<a href="https://www.behance.net/mannavjaising1" target="_blank">behance</a>)
-    (<a href="https://medium.com/@mannavj" target="_blank">medium</a>)
-  </div>
+<div class="post breakable">
+  find me,
+  <a href="https://instagram.com/mannavmedia" target="_blank">@mannavmedia</a>
+  (<a href="https://www.behance.net/mannavjaising1" target="_blank">behance</a>)
+  (<a href="https://medium.com/@mannavj" target="_blank">medium</a>)
 </div>
 
 </div>
+
+<script>
+/* Wrap every word dynamically */
+document.querySelectorAll('.breakable').forEach(container => {
+  container.innerHTML = container.innerHTML.replace(/(\S+)/g, '<span class="word">$1</span>');
+});
+
+const words = document.querySelectorAll('.word');
+let collapsed = false;
+
+function collapseText(){
+  words.forEach(word => {
+    const randomX = (Math.random() - 0.5) * 200;
+    const randomY = Math.random() * 400 + 100;
+    const randomRotate = (Math.random() - 0.5) * 90;
+
+    word.style.transform =
+      `translate(${randomX}px, ${randomY}px) rotate(${randomRotate}deg)`;
+    word.style.opacity = 0;
+  });
+  collapsed = true;
+}
+
+function restoreText(){
+  words.forEach(word => {
+    word.style.transform = `translate(0,0) rotate(0deg)`;
+    word.style.opacity = 1;
+  });
+  collapsed = false;
+}
+
+/* Scroll trigger */
+window.addEventListener('scroll', () => {
+  const triggerPoint = 300; // fully readable first
+  if(window.scrollY > triggerPoint && !collapsed){
+    collapseText();
+  } else if(window.scrollY <= triggerPoint && collapsed){
+    restoreText();
+  }
+});
+</script>
+
 </body>
 </html>
