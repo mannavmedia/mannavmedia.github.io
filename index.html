@@ -13,35 +13,33 @@
   --maxw:820px;
 }
 
-html,body { height:100%; }
-
 body{
   margin:0;
   background:var(--paper);
   color:var(--deep-black);
-  display:flex;
-  justify-content:center;
-  padding:24px;
+  padding:40px 20px;
   box-sizing:border-box;
 }
 
 .page{
   width:100%;
   max-width:var(--maxw);
+  margin:0 auto;
 }
 
 /* HEADER */
 .title{
   font-family:Futura, "Trebuchet MS", sans-serif;
   font-style:italic;
-  font-weight:1000; /* heavier */
+  font-weight:1000;
   color:var(--bright-red);
   letter-spacing:0.05em;
   margin:0;
   font-size:clamp(32px, 7vw, 72px);
+  text-align:center; /* centered */
 }
 
-/* SUBTITLE FIXED */
+/* SUBTITLE */
 .subtitle{
   font-family:Futura, "Trebuchet MS", sans-serif;
   font-style:italic;
@@ -49,20 +47,21 @@ body{
   font-size:clamp(12px, 1.6vw, 14px);
   margin:18px 0 40px 0;
   line-height:1.7;
-  max-width:100%;
+  text-align:center; /* centered */
   word-break:break-word;
 }
 
-/* MANIFESTO (unchanged structurally) */
+/* MANIFESTO */
 .manifesto-wrap{
   width:100%;
   max-width:720px;
+  margin:0 auto;
 }
 
 ol.manifesto{
   margin:0;
   padding-left:1.25rem;
-  text-align:left;
+  text-align:left; /* stays left */
   font-family:"Courier New", Courier, monospace;
   font-weight:300;
   color:var(--deep-black);
@@ -81,6 +80,7 @@ ol.manifesto li{
   font-weight:400;
   font-size:clamp(12px, 1.6vw, 14px);
   margin-top:50px;
+  text-align:center; /* centered */
 }
 
 .post a{
