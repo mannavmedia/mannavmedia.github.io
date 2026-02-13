@@ -40,13 +40,13 @@ body{
   text-align:center;
 }
 
-/* SUBTITLE — FIXED */
+/* SUBTITLE */
 .subtitle{
   font-family:Futura, "Trebuchet MS", sans-serif;
   font-style:italic;
   font-weight:400;
-  font-size:clamp(15px, 2.2vw, 18px);
-  line-height:1.8;
+  font-size:clamp(16px, 2.3vw, 19px);
+  line-height:1.9;
   text-align:center;
   max-width:650px;
   margin:24px auto 50px auto;
@@ -64,7 +64,6 @@ ol.manifesto{
   text-align:left;
   font-family:"Courier New", Courier, monospace;
   font-weight:300;
-  color:var(--deep-black);
   font-size:clamp(18px, 2.6vw, 24px);
   line-height:1.9;
 }
@@ -73,12 +72,11 @@ ol.manifesto li{
   margin:1.2rem 0;
 }
 
-/* POSTSCRIPT — aligned with subtitle */
+/* POSTSCRIPT */
 .post{
   font-family:Futura, "Trebuchet MS", sans-serif;
-  font-style:normal;
   font-weight:400;
-  font-size:clamp(15px, 2.2vw, 18px);
+  font-size:clamp(16px, 2.3vw, 19px);
   text-align:center;
   max-width:650px;
   margin:80px auto 0 auto;
@@ -93,10 +91,10 @@ ol.manifesto li{
   text-decoration:underline;
 }
 
-/* Word styling for crumble effect */
+/* crumble styling */
 .word{
   display:inline-block;
-  transition:transform 0.6s ease, opacity 0.6s ease;
+  transition:transform 0.8s ease, opacity 0.8s ease;
 }
 </style>
 </head>
@@ -104,7 +102,7 @@ ol.manifesto li{
 <body>
 <div class="page">
 
-<h1 class="title">MANNAV R. JAI$INGHANI</h1>
+<h1 class="title breakable">MANNAV R. JAI$INGHANI</h1>
 
 <div class="subtitle breakable">
 writing / editing / rapping / recording / philosophising / shooting / thinking / inventing / living / loving / laughing / curating / smiling / snacking / learning / provoking
@@ -135,42 +133,64 @@ writing / editing / rapping / recording / philosophising / shooting / thinking /
 </div>
 
 <script>
-/* Wrap every word dynamically */
-document.querySelectorAll('.breakable').forEach(container => {
-  container.innerHTML = container.innerHTML.replace(/(\S+)/g, '<span class="word">$1</span>');
-});
+function wrapTextNodes(element){
+  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
+  const textNodes = [];
+  while(walker.nextNode()){
+    textNodes.push(walker.currentNode);
+  }
+
+  textNodes.forEach(node => {
+    if(node.parentNode.tagName !== "SCRIPT"){
+      const words = node.textContent.split(/(\s+)/);
+      const fragment = document.createDocumentFragment();
+
+      words.forEach(word => {
+        if(word.trim().length > 0){
+          const span = document.createElement("span");
+          span.className = "word";
+          span.textContent = word;
+          fragment.appendChild(span);
+        } else {
+          fragment.appendChild(document.createTextNode(word));
+        }
+      });
+
+      node.parentNode.replaceChild(fragment, node);
+    }
+  });
+}
+
+document.querySelectorAll('.breakable').forEach(wrapTextNodes);
 
 const words = document.querySelectorAll('.word');
 let collapsed = false;
 
-function collapseText(){
+function collapse(){
   words.forEach(word => {
-    const randomX = (Math.random() - 0.5) * 200;
-    const randomY = Math.random() * 400 + 100;
-    const randomRotate = (Math.random() - 0.5) * 90;
+    const x = (Math.random() - 0.5) * 300;
+    const y = Math.random() * 600 + 100;
+    const r = (Math.random() - 0.5) * 120;
 
-    word.style.transform =
-      `translate(${randomX}px, ${randomY}px) rotate(${randomRotate}deg)`;
+    word.style.transform = `translate(${x}px, ${y}px) rotate(${r}deg)`;
     word.style.opacity = 0;
   });
   collapsed = true;
 }
 
-function restoreText(){
+function restore(){
   words.forEach(word => {
-    word.style.transform = `translate(0,0) rotate(0deg)`;
+    word.style.transform = "translate(0,0) rotate(0deg)";
     word.style.opacity = 1;
   });
   collapsed = false;
 }
 
-/* Scroll trigger */
-window.addEventListener('scroll', () => {
-  const triggerPoint = 300; // fully readable first
-  if(window.scrollY > triggerPoint && !collapsed){
-    collapseText();
-  } else if(window.scrollY <= triggerPoint && collapsed){
-    restoreText();
+window.addEventListener("scroll", () => {
+  if(window.scrollY > 400 && !collapsed){
+    collapse();
+  } else if(window.scrollY <= 400 && collapsed){
+    restore();
   }
 });
 </script>
