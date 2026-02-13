@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MANNAV R. JAISINGHANI</title>
+<title>MANNAV R. JAI$INGHANI</title>
+
+<!-- Montserrat Free Font (closest Futura alternative) -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,800;1,400;1,800&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -22,7 +25,7 @@ body {
 
 /* Header */
 h1 {
-  font-family: "Futura", "Futura PT", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: italic;
   font-weight: 800;
   font-size: clamp(48px, 9vw, 110px);
@@ -33,7 +36,7 @@ h1 {
 
 /* Subtitle */
 .subtitle {
-  font-family: "Futura", "Futura PT", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: clamp(20px, 3.5vw, 26px);
@@ -58,9 +61,9 @@ h1 {
   margin-bottom: 16px;
 }
 
-/* Postscript */
+/* Footer */
 .footer {
-  font-family: "Futura", "Futura PT", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: clamp(20px, 3.5vw, 26px);
@@ -75,6 +78,25 @@ h1 {
 .footer a:hover {
   text-decoration: underline;
 }
+
+/* Subtle Cursor Glow */
+.cursor-glow {
+  position: fixed;
+  width: 260px;
+  height: 260px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 0, 0, 0.10) 0%,
+    rgba(255, 0, 0, 0.05) 40%,
+    rgba(255, 0, 0, 0.02) 60%,
+    transparent 75%
+  );
+  transform: translate(-50%, -50%);
+  mix-blend-mode: multiply;
+  z-index: 9999;
+}
 </style>
 </head>
 
@@ -82,7 +104,7 @@ h1 {
 
 <div class="container">
 
-  <h1>MANNAV R. JAISINGHANI</h1>
+  <h1>MANNAV R. JAI$INGHANI</h1>
 
   <div class="subtitle">
     writing / editing / rapping / recording / philosophising / shooting / thinking <br>
@@ -104,13 +126,29 @@ h1 {
   </ol>
 
   <div class="footer">
-    find me,<br><br>
-    <a href="https://instagram.com/mannavmedia" target="_blank">@mannavmedia</a><br>
+    find me, 
+    <a href="https://instagram.com/mannavmedia" target="_blank">@mannavmedia</a>
+    <br><br>
     (<a href="https://www.behance.net/mannavjaising1" target="_blank">behance</a>)
     (<a href="https://medium.com/@mannavj" target="_blank">medium</a>)
   </div>
 
 </div>
+
+<script>
+const glow = document.createElement("div");
+glow.className = "cursor-glow";
+document.body.appendChild(glow);
+
+document.addEventListener("mousemove", function(e) {
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
+});
+
+if ("ontouchstart" in window || navigator.maxTouchPoints > 0) {
+  glow.style.display = "none";
+}
+</script>
 
 </body>
 </html>
