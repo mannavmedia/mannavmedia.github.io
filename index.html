@@ -4,221 +4,190 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MANNAV R. JAI$INGHANI</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-
 <style>
 body {
-  margin: 0;
-  padding: 0;
-  background: #e6e1d8;
-  text-align: center;
+margin: 0;
+padding: 0;
+background: #e6e1d8;
+text-align: center;
 }
-
 .container {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 80px 20px 120px;
+max-width: 820px;
+margin: 0 auto;
+padding: 80px 20px 120px;
 }
-
 h1 {
-  font-family: "Montserrat", sans-serif;
-  font-style: italic;
-  font-weight: 800;
-  font-size: clamp(48px, 9vw, 110px);
-  color: #ff0000;
-  margin: 0 0 45px;
-  letter-spacing: 2px;
+font-family: "Montserrat", sans-serif;
+font-style: italic;
+font-weight: 800;
+font-size: clamp(48px, 9vw, 110px);
+color: #ff0000;
+margin: 0 0 45px;
+letter-spacing: 2px;
 }
-
 .subtitle {
-  font-family: "Montserrat", sans-serif;
-  font-style: italic;
-  font-weight: 700;
-  font-size: clamp(17px, 2.8vw, 19px);
-  line-height: 1.45;
-  max-width: 680px;
-  margin: 0 auto 30px;
+font-family: "Montserrat", sans-serif;
+font-style: italic;
+font-weight: 700;
+font-size: clamp(17px, 2.8vw, 19px);
+line-height: 1.45;
+max-width: 680px;
+margin: 0 auto 30px;
 }
-
 .resume-btn {
-  display: inline-block;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: clamp(17px, 2.8vw, 19px);
-  color: #8F2D56;
-  text-decoration: none;
-  margin: 0 auto 40px;
+display: inline-block;
+font-family: "Montserrat", sans-serif;
+font-weight: 600;
+font-size: clamp(17px, 2.8vw, 19px);
+color: #8F2D56;
+text-decoration: none;
+margin: 0 8px 40px;
 }
-
 .resume-btn:hover {
-  text-decoration: underline;
+text-decoration: underline;
 }
-
 .manifesto {
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 400;
-  font-size: 20px;
-  color: #000;
-  line-height: 1.7;
-  max-width: 680px;
-  margin: 0 auto 40px;
-  text-align: left;
+font-family: "Courier New", Courier, monospace;
+font-weight: 400;
+font-size: 20px;
+color: #000;
+line-height: 1.7;
+max-width: 680px;
+margin: 0 auto 40px;
+text-align: left;
 }
-
 .manifesto li {
-  margin-bottom: 14px;
+margin-bottom: 14px;
 }
-
 .footer {
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: clamp(17px, 2.8vw, 19px);
-  margin-top: 60px;
+font-family: "Montserrat", sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: clamp(17px, 2.8vw, 19px);
+margin-top: 60px;
 }
-
 .footer a {
-  color: #000;
-  text-decoration: none;
+color: #000;
+text-decoration: none;
 }
-
 .footer a:hover {
-  text-decoration: underline;
+text-decoration: underline;
 }
-
 .cursor-glow {
-  position: fixed;
-  width: 240px;
-  height: 240px;
-  pointer-events: none;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(143, 45, 86, 0.15) 0%,
-    rgba(143, 45, 86, 0.08) 40%,
-    rgba(143, 45, 86, 0.04) 60%,
-    transparent 75%
-  );
-  transform: translate(-50%, -50%);
-  mix-blend-mode: multiply;
-  z-index: 9999;
+position: fixed;
+width: 240px;
+height: 240px;
+pointer-events: none;
+border-radius: 50%;
+background: radial-gradient(
+circle,
+rgba(143, 45, 86, 0.15) 0%,
+rgba(143, 45, 86, 0.08) 40%,
+rgba(143, 45, 86, 0.04) 60%,
+transparent 75%
+);
+transform: translate(-50%, -50%);
+mix-blend-mode: multiply;
+z-index: 9999;
 }
-
 .chrome-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90px;
-  margin: 20px 0;
-  perspective: 1000px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 90px;
+margin: 20px 0;
+perspective: 1000px;
 }
-
 .chrome-text {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: 38px;
-  font-style: italic;
-  letter-spacing: 1px;
-  background: linear-gradient(
-    145deg,
-    #1a1a1a 0%,
-    #e8e8e8 30%,
-    #ffffff 50%,
-    #c0c0c0 70%,
-    #1a1a1a 100%
-  );
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: rotateY 7s linear infinite, shimmer 4s ease-in-out infinite;
-  text-shadow: 
-    3px 3px 6px rgba(0, 0, 0, 0.5),
-    -2px -2px 3px rgba(255, 255, 255, 0.2);
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+font-family: "Montserrat", sans-serif;
+font-weight: 900;
+font-size: 38px;
+font-style: italic;
+letter-spacing: 1px;
+background: linear-gradient(
+145deg,
+#1a1a1a 0%,
+#e8e8e8 30%,
+#ffffff 50%,
+#c0c0c0 70%,
+#1a1a1a 100%
+);
+background-size: 200% 200%;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+animation: rotateY 7s linear infinite, shimmer 4s ease-in-out infinite;
+text-shadow:
+3px 3px 6px rgba(0, 0, 0, 0.5),
+-2px -2px 3px rgba(255, 255, 255, 0.2);
+filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
-
 @keyframes rotateY {
-  0% {
-    transform: rotateY(0deg) rotateX(5deg);
-  }
-  100% {
-    transform: rotateY(360deg) rotateX(5deg);
-  }
+0% {
+transform: rotateY(0deg) rotateX(5deg);
 }
-
+100% {
+transform: rotateY(360deg) rotateX(5deg);
+}
+}
 @keyframes shimmer {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+0%, 100% {
+background-position: 0% 50%;
+}
+50% {
+background-position: 100% 50%;
+}
 }
 </style>
 </head>
-
 <body>
-
 <div class="container">
-
-  <h1>MANNAV R. JAI$INGHANI</h1>
-
-  <div class="subtitle">
-    writing / editing / rapping / recording / philosophising / shooting / thinking /
-
-    inventing / living / loving / laughing / curating / smiling / snacking / learning 
-
-    / provoking
-  </div>
-
-  <a href="resume.html" class="resume-btn">(view CV)</a>
-
-  <ol class="manifesto">
-    <li>I Am At War With Inauthenticity</li>
-    <li>Hesitance is our Generation's Biggest Plague</li>
-    <li>If Your Parent Has a Wikipedia Page, I'm Not Trying To See Your Art</li>
-    <li>Originality Lies in the Attempt of Originality - It's Original in the Virtue That it Tries To Be</li>
-    <li>Too Cringe to Live, too Based to Die</li>
-    <li>Distraction is a Navigation</li>
-    <li>I am a thinker with Teeth and a writer with Nails</li>
-    <li>To love is to love, to complicate is to hate</li>
-    <li>I Know the Truth, And if I Don't Know it now, I'll know it when I need to. That's my truth, timing.</li>
-    <li>Too many people want you to live in their head because they're stuck there</li>
-  </ol>
-
-  <div class="footer">
-    find me, 
-    <a href="https://instagram.com/mannavmedia" target="_blank">@mannavmedia</a>
-    <br>
-    (<a href="https://www.behance.net/mannavjaising1" target="_blank">behance</a>)
-    (<a href="https://medium.com/@mannavj" target="_blank">medium</a>)
-    <br>
-    (<a href="https://youtube.com/@mannavmedia?si=ptH76VKO8XN-F3AC" target="_blank">youtube</a>)
-    (<a href="https://pubhtml5.com/bookcase/iswe/" target="_blank">magazine</a>)
-    
-    <div class="chrome-container">
-      <div class="chrome-text">J$M</div>
-    </div>
-  </div>
-
+<h1>MANNAV R. JAI$INGHANI</h1>
+<div class="subtitle">
+writing / editing / rapping / recording / philosophising / shooting / thinking /
+inventing / living / loving / laughing / curating / smiling / snacking / learning
+/ provoking
 </div>
-
+<a href="resume.html" class="resume-btn">(view CV)</a>
+<a href="Mannav_Jaisinghani_is_Making_Things.pdf" target="_blank" class="resume-btn">(view portfolio)</a>
+<ol class="manifesto">
+<li>I Am At War With Inauthenticity</li>
+<li>Hesitance is our Generation's Biggest Plague</li>
+<li>If Your Parent Has a Wikipedia Page, I'm Not Trying To See Your Art</li>
+<li>Originality Lies in the Attempt of Originality - It's Original in the Virtue That it Tries To Be</li>
+<li>Too Cringe to Live, too Based to Die</li>
+<li>Distraction is a Navigation</li>
+<li>I am a thinker with Teeth and a writer with Nails</li>
+<li>To love is to love, to complicate is to hate</li>
+<li>I Know the Truth, And if I Don't Know it now, I'll know it when I need to. That's my truth, timing.</li>
+<li>Too many people want you to live in their head because they're stuck there</li>
+</ol>
+<div class="footer">
+find me,
+<a href="https://instagram.com/mannavmedia" target="_blank">@mannavmedia</a>
+<br>
+(<a href="https://www.behance.net/mannavjaising1" target="_blank">behance</a>)
+(<a href="https://medium.com/@mannavj" target="_blank">medium</a>)
+<br>
+(<a href="https://youtube.com/@mannavmedia?si=ptH76VKO8XN-F3AC" target="_blank">youtube</a>)
+(<a href="https://pubhtml5.com/bookcase/iswe/" target="_blank">magazine</a>)
+<div class="chrome-container">
+<div class="chrome-text">J$M</div>
+</div>
+</div>
+</div>
 <script>
 const glow = document.createElement("div");
 glow.className = "cursor-glow";
 document.body.appendChild(glow);
-
 document.addEventListener("mousemove", function(e) {
-  glow.style.left = e.clientX + "px";
-  glow.style.top = e.clientY + "px";
+glow.style.left = e.clientX + "px";
+glow.style.top = e.clientY + "px";
 });
-
 if ("ontouchstart" in window || navigator.maxTouchPoints > 0) {
-  glow.style.display = "none";
+glow.style.display = "none";
 }
 </script>
-
 </body>
 </html>
